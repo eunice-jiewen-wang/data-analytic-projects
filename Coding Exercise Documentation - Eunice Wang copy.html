@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">Project: Fetch Rewards Takehome Test</p>
+<p class="p1">Name: Eunice Wang</p>
+<p class="p1">Date: June 14</p>
+<p class="p2"><br></p>
+<p class="p1">Part 1: Data Exploration and Database Diagram</p>
+<p class="p1">1.1 Data Exploration in MangoDB</p>
+<p class="p2"><br></p>
+<p class="p1">1.2 Convert data schemas to csv and import to pgAdmin</p>
+<p class="p2"><br></p>
+<p class="p1">1.3 Create Tables</p>
+<p class="p2"><br></p>
+<p class="p1">Table 1 - Users</p>
+<p class="p1">CREATE TABLE users(</p>
+<p class="p1"><span class="Apple-tab-span">	</span>user_id varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>active boolean,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>createdDate date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>lastLogin date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>role varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>signUpSource varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>state varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>primary key (user_id)</p>
+<p class="p1"><span class="Apple-tab-span">	</span>);</p>
+<p class="p2"><br></p>
+<p class="p1">CREATE TABLE brand(</p>
+<p class="p1"><span class="Apple-tab-span">	</span>brand_id varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>barcode varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>brandCode varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>category varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>categoryCode varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>cpg_ref varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>name varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>topBrand boolean,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>primary key(brand_id)</p>
+<p class="p1">);</p>
+<p class="p2"><br></p>
+<p class="p1">CREATE TABLE receipts_master(</p>
+<p class="p1"><span class="Apple-tab-span">	</span>ind int,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>bonusPointsEarned numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>bonusPointsEarnedReason varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>pointsEarneddf_ numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>purchasedItemCount numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>rewardsReceiptStatus varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>totalSpent numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>userId varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>receipt_id varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>create_Date date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>date_scanned date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>pointsAwardedDate date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>finished_Date date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>modify_Date date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>purchase_Date date,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>metabriteCampaignId varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>userFlaggedQuantity numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>originalMetaBriteItemPrice numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>pointsEarnedreward_ numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>barcode varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>needsFetchReviewReason varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>discountedItemPrice numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>partnerItemId varchar,<span class="Apple-tab-span">	</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>deleted boolean,<span class="Apple-tab-span">	</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>originalMetaBriteQuantityPurchased numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>description varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>priceAfterCoupon numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>finalPrice numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>userFlaggedPrice numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>brandCode varchar,<span class="Apple-tab-span">	</span></p>
+<p class="p1"><span class="Apple-tab-span">	</span>originalMetaBriteBarcode varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>originalFinalPrice numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>rewardsGroup varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>userFlaggedNewItem boolean,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>preventTargetGapPoints boolean,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>competitiveProduct varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>quantityPurchased numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>originalReceiptItemText varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>needsFetchReview boolean,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>pointsNotAwardedReason varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>userFlaggedBarcode varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>itemNumber numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>competitorRewardsGroup varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>itemPrice numeric,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>rewardsProductPartnerId varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>pointsPayerId varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>originalMetaBriteDescription varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>userFlaggedDescription varchar,</p>
+<p class="p1"><span class="Apple-tab-span">	</span>targetPrice numeric</p>
+<p class="p1">);</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">SELECT * FROM brand</p>
+<p class="p1">limit 10;</p>
+<p class="p1">Part 2: Data Analysis - Business Questions</p>
+<p class="p2"><br></p>
+<p class="p1">Part 3: Data</p>
+<p class="p2"><br></p>
+<p class="p1">Part 4: Note to Stakeholders</p>
+</body>
+</html>
